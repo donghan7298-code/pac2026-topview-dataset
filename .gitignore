@@ -7,4 +7,7 @@ models/
 *.states.jsonl.gz
 *.zip
 .DS_Store
+projects/pattern_evaluation/runs/
+projects/pattern_evaluation/artifacts/*.labels.jsonl.gz
+projects/pattern_evaluation/artifacts/benchmark_episodes.jsonl.gz
 !downloads/PAC2026_topview_training_data.zip

@@ -1,5 +1,17 @@
 # PAC2026 AHEAD · Top-view Mixed Palletizing Dataset v2
 
+## 점수 기반 패턴 평가 프로젝트
+
+[projects/pattern_evaluation](projects/pattern_evaluation/README.md)에 학습된 미래 예측 모델, 자동 가중치 탐색, AI Ranking + Top-K Rollout, 선반 규칙 정책, Python·JSON·HTTP 연동 API가 있습니다. 기존 데이터 스키마 `2.0`과 m/kg/N 단위를 그대로 사용합니다.
+
+```bash
+python -m pip install -r requirements.txt
+python -m projects.pattern_evaluation plan --input projects/pattern_evaluation/artifacts/sample_observation.json
+```
+
+학습·비교 수치와 제한은 [프로젝트 검증 보고서](projects/pattern_evaluation/VALIDATION.md)를 확인하세요. 아래 데이터 팩의 기존 예제 모델과 새 평가 프로젝트의 체크포인트는 별도 버전입니다.
+
+
 불확정 입고 순서에서 **탑뷰로 실제 확인한 다음 박스**와 **아직 관측하지 못한 재고**를 나눠 사용하는 적재 알고리즘 개발 팩입니다. 데이터 생성 → 순차 적재 → 후보별 미래 평가 표적 생성 → 신경망 점수 학습까지 실행할 수 있습니다.
 
 **합성 개발 데이터입니다.** 주최측 데이터, HD현대로보틱스의 내부 데이터/알고리즘, 실제 CCTV 영상은 포함하지 않습니다. 입력 치수·물성·시간 예산은 개발 가정입니다. 실제 로봇 경로·물리적 안정성은 `NOT_CHECKED`입니다.
@@ -109,10 +121,11 @@ observation, reward, done, info = env.step({'type': 'PLACE', 'candidate': candid
 
 학습 보고서의 MSE·교사 후보 일치율·교사 점수 손실은 **교사 모방 지표**입니다. 실제 적재율 향상, 추론 시간 단축, 물리적 안정성을 증명하지 않습니다. 탑뷰 2/4/8/12의 효과는 동일 재고·순서·규칙·계산 예산에서 실제 정책을 실행해 별도로 비교해야 합니다. 신경망으로 줄인 후보는 마지막에 같은 규칙과 필요한 로봇 검증을 통과해야 합니다.
 
-## 팀원 연결 지점
+## 모듈 연결 지점
 
 - 알고리즘 담당: `pacdata/packing.py`의 `generate_candidates`, `greedy`를 팀 알고리즘으로 교체. 정책이 받는 관측 형식은 유지.
 - 평가·데이터 담당: `mask`, `teacher_score`, 시나리오·물성·예외 처리 조건 검토, 학습·시험 분할과 결과 관리.
 - 시각화·로봇 담당: 관측/선택 배치 JSON을 화면·ROS2·RViz·Gazebo/MoveIt에 연결. 가반하중·파지·접근·경로 충돌 검증 추가.
 
 자세한 내용: [데이터 카드](docs/DATA_CARD.md), [입력 스키마](docs/SCHEMA.md), [학습·비교 계획](docs/TRAINING_AND_EVALUATION.md), [GitHub 공유](docs/GITHUB_SHARE.md), [실제 CCTV 연결](docs/CAMERA_INTEGRATION.md).
+
