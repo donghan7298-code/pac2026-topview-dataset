@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "source": "SYNTHETIC_DEVELOPMENT_ONLY",
+  "groups": 250,
+  "observation_checks": 782496,
+  "episodes": 12000,
+  "splits": {
+    "train": {
+      "episodes": 8400,
+      "arrivals": 534384
+    },
+    "validation": {
+      "episodes": 1776,
+      "arrivals": 113376
+    },
+    "test": {
+      "episodes": 1824,
+      "arrivals": 122736
+    }
+  },
+  "verified_preview_lengths": {
+    "0": 59816,
+    "1": 80651,
+    "2": 161349,
+    "3": 72665,
+    "4": 111447,
+    "5": 16317,
+    "6": 32160,
+    "7": 49518,
+    "8": 74671,
+    "9": 14980,
+    "10": 27486,
+    "11": 31016,
+    "12": 50420
+  },
+  "labels": {
+    "train": {
+      "states": 2233,
+      "candidate_targets": 16781
+    },
+    "validation": {
+      "states": 469,
+      "candidate_targets": 3516
+    },
+    "test": {
+      "states": 460,
+      "candidate_targets": 3485
+    }
+  },
+  "robot_feasibility": "NOT_CHECKED",
+  "limits": "No real camera, physics, robot path or optimality validation"
+}

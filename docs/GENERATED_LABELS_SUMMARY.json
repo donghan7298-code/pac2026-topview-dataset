@@ -1,0 +1,96 @@
+{
+  "source": "SYNTHETIC_DEVELOPMENT_ONLY",
+  "splits": {
+    "train": {
+      "episodes": 400,
+      "states": 2233,
+      "candidate_targets": 16781,
+      "invalid_probes": 6302,
+      "stopped_no_candidate": 321,
+      "remeasured": 79,
+      "routed": 71,
+      "scenario_states": {
+        "heavy_last": 220,
+        "sku_blocks": 183,
+        "fragile_rotation": 162,
+        "tall_flat_mix": 165,
+        "large_last": 295,
+        "alternating_size": 227,
+        "heavy_weak_mix": 167,
+        "pallet_resize": 199,
+        "random": 177,
+        "measurement_recheck": 152,
+        "occlusion_gap": 146,
+        "damage_route": 140
+      },
+      "camera_states": {
+        "topview4": 544,
+        "topview12": 609,
+        "topview8": 518,
+        "preview2": 562
+      }
+    },
+    "validation": {
+      "episodes": 80,
+      "states": 469,
+      "candidate_targets": 3516,
+      "invalid_probes": 1328,
+      "stopped_no_candidate": 60,
+      "routed": 13,
+      "remeasured": 16,
+      "scenario_states": {
+        "heavy_last": 74,
+        "occlusion_gap": 33,
+        "damage_route": 27,
+        "large_last": 87,
+        "fragile_rotation": 18,
+        "alternating_size": 38,
+        "measurement_recheck": 31,
+        "sku_blocks": 14,
+        "tall_flat_mix": 28,
+        "random": 32,
+        "heavy_weak_mix": 36,
+        "pallet_resize": 51
+      },
+      "camera_states": {
+        "preview2": 65,
+        "topview4": 132,
+        "topview8": 167,
+        "topview12": 105
+      }
+    },
+    "test": {
+      "episodes": 80,
+      "states": 460,
+      "candidate_targets": 3485,
+      "invalid_probes": 1300,
+      "remeasured": 27,
+      "stopped_no_candidate": 62,
+      "routed": 7,
+      "scenario_states": {
+        "measurement_recheck": 44,
+        "tall_flat_mix": 42,
+        "occlusion_gap": 49,
+        "fragile_rotation": 35,
+        "alternating_size": 12,
+        "damage_route": 14,
+        "heavy_last": 61,
+        "sku_blocks": 33,
+        "large_last": 76,
+        "heavy_weak_mix": 35,
+        "random": 13,
+        "pallet_resize": 46
+      },
+      "camera_states": {
+        "topview8": 134,
+        "topview4": 83,
+        "topview12": 125,
+        "preview2": 118
+      }
+    }
+  },
+  "total_states": 3162,
+  "total_candidate_targets": 23782,
+  "feature_count": 103,
+  "label_kind": "BOUNDED_MONTE_CARLO_GREEDY_TEACHER_NOT_OPTIMAL"
+}

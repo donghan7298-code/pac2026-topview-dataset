@@ -1,0 +1,231 @@
+{
+  "source": "SYNTHETIC_DEVELOPMENT_ONLY",
+  "model": "103-feature 32-hidden tanh neural score model",
+  "seed": 20261006,
+  "epochs": 20,
+  "selected_by": "validation_candidate_mse",
+  "train": {
+    "candidate_mse": 0.007933615367342616,
+    "states": 2233,
+    "candidates": 16781,
+    "teacher_top1_including_ties": 0.18360949395432155,
+    "mean_teacher_regret": 0.03165780743394537
+  },
+  "validation": {
+    "candidate_mse": 0.012964358857049153,
+    "states": 469,
+    "candidates": 3516,
+    "teacher_top1_including_ties": 0.1791044776119403,
+    "mean_teacher_regret": 0.03194728571428571
+  },
+  "test": {
+    "candidate_mse": 0.014404870508316393,
+    "states": 460,
+    "candidates": 3485,
+    "teacher_top1_including_ties": 0.1673913043478261,
+    "mean_teacher_regret": 0.03614501086956522
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "validation": {
+        "candidate_mse": 0.023075129704112057,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.16417910447761194,
+        "mean_teacher_regret": 0.032329452025586354
+      }
+    },
+    {
+      "epoch": 2,
+      "validation": {
+        "candidate_mse": 0.01962889442064367,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.14712153518123666,
+        "mean_teacher_regret": 0.032648882729211084
+      }
+    },
+    {
+      "epoch": 3,
+      "validation": {
+        "candidate_mse": 0.01687889958636008,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.16844349680170576,
+        "mean_teacher_regret": 0.03302886780383795
+      }
+    },
+    {
+      "epoch": 4,
+      "validation": {
+        "candidate_mse": 0.015881024062852397,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.13219616204690832,
+        "mean_teacher_regret": 0.030996381663113005
+      }
+    },
+    {
+      "epoch": 5,
+      "validation": {
+        "candidate_mse": 0.015159620460115064,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.13432835820895522,
+        "mean_teacher_regret": 0.03143926865671642
+      }
+    },
+    {
+      "epoch": 6,
+      "validation": {
+        "candidate_mse": 0.015255106668853576,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.13859275053304904,
+        "mean_teacher_regret": 0.029797663113006398
+      }
+    },
+    {
+      "epoch": 7,
+      "validation": {
+        "candidate_mse": 0.014552769005375998,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.14925373134328357,
+        "mean_teacher_regret": 0.032305268656716415
+      }
+    },
+    {
+      "epoch": 8,
+      "validation": {
+        "candidate_mse": 0.014656048171028085,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.14285714285714285,
+        "mean_teacher_regret": 0.03320928358208955
+      }
+    },
+    {
+      "epoch": 9,
+      "validation": {
+        "candidate_mse": 0.013808570951650095,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.19189765458422176,
+        "mean_teacher_regret": 0.03232852878464819
+      }
+    },
+    {
+      "epoch": 10,
+      "validation": {
+        "candidate_mse": 0.014216334561635199,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.17057569296375266,
+        "mean_teacher_regret": 0.03233646481876332
+      }
+    },
+    {
+      "epoch": 11,
+      "validation": {
+        "candidate_mse": 0.013654346191196582,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.17697228144989338,
+        "mean_teacher_regret": 0.030366530916844346
+      }
+    },
+    {
+      "epoch": 12,
+      "validation": {
+        "candidate_mse": 0.013499457094744167,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.17057569296375266,
+        "mean_teacher_regret": 0.03049201492537313
+      }
+    },
+    {
+      "epoch": 13,
+      "validation": {
+        "candidate_mse": 0.013523907569464281,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.24520255863539445,
+        "mean_teacher_regret": 0.02864253304904051
+      }
+    },
+    {
+      "epoch": 14,
+      "validation": {
+        "candidate_mse": 0.013599917907954496,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.22388059701492538,
+        "mean_teacher_regret": 0.02990949253731343
+      }
+    },
+    {
+      "epoch": 15,
+      "validation": {
+        "candidate_mse": 0.013254851238887993,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.19829424307036247,
+        "mean_teacher_regret": 0.02962315991471215
+      }
+    },
+    {
+      "epoch": 16,
+      "validation": {
+        "candidate_mse": 0.012964358857049153,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.1791044776119403,
+        "mean_teacher_regret": 0.03194728571428571
+      }
+    },
+    {
+      "epoch": 17,
+      "validation": {
+        "candidate_mse": 0.013545483654792568,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.18763326226012794,
+        "mean_teacher_regret": 0.031182786780383796
+      }
+    },
+    {
+      "epoch": 18,
+      "validation": {
+        "candidate_mse": 0.013371461926581984,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.208955223880597,
+        "mean_teacher_regret": 0.030945042643923237
+      }
+    },
+    {
+      "epoch": 19,
+      "validation": {
+        "candidate_mse": 0.01308716450612042,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.19189765458422176,
+        "mean_teacher_regret": 0.030409012793176968
+      }
+    },
+    {
+      "epoch": 20,
+      "validation": {
+        "candidate_mse": 0.013329671388935755,
+        "states": 469,
+        "candidates": 3516,
+        "teacher_top1_including_ties": 0.21748400852878466,
+        "mean_teacher_regret": 0.032064611940298506
+      }
+    }
+  ],
+  "interpretation": "Teacher imitation only; no claim of better real packing, robot feasibility or physical safety"
+}

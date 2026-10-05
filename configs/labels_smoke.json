@@ -1,0 +1,1 @@
+{"seed":20261005,"episodes_per_split":{"train":4,"validation":2,"test":2},"max_processed":9,"stride":3,"max_candidates":4,"draws":1,"depth":3}

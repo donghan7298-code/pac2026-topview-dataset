@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+data/
+models/
+*.episodes.jsonl.gz
+*.states.jsonl.gz
+*.zip
+.DS_Store
+!downloads/PAC2026_topview_training_data.zip

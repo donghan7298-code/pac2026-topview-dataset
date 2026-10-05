@@ -1,0 +1,3 @@
+# Core generation, validation and environment need no third-party packages.
+# Optional neural score model:
+numpy>=1.26,<3
