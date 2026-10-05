@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ahead-pattern-evaluation"
+version = "0.1.0"
+description = "AHEAD normalized pattern scoring and rollout ranking"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["pattern_evaluation*"]

@@ -1,0 +1,9 @@
+{
+  "weights": {"U": 0.20, "S": 0.30, "L": 0.15, "F": 0.20, "T": 0.10, "R": 0.05},
+  "support_threshold": 0.75,
+  "support_cog_min_mm": 10.0,
+  "support_cog_target_mm": 30.0,
+  "time_reference_s": 8.0,
+  "tail_alpha": 0.20,
+  "risk_tail_mix": 0.40
+}

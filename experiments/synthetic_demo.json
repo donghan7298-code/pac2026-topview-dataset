@@ -1,0 +1,307 @@
+{
+  "demo_kind": "synthetic_metrics_and_mock_robot_checks_no_trained_ai",
+  "ranking_source": "ai_with_heuristic_reserve",
+  "weights": {
+    "U": 0.2,
+    "S": 0.3,
+    "L": 0.15,
+    "F": 0.2,
+    "T": 0.1,
+    "R": 0.05
+  },
+  "ranked_before_robot": [
+    {
+      "candidate": {
+        "candidate_id": "B_supported",
+        "metrics": {
+          "compactness": 0.75,
+          "support_ratio": 1.0,
+          "support_cog_margin_mm": 60,
+          "min_load_slack_ratio": 0.8,
+          "pallet_cog_offset_mm": 90,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 8.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "UNKNOWN",
+          "cycle_time_s": null,
+          "reason": ""
+        }
+      },
+      "features": {
+        "U": 0.75,
+        "S": 1.0,
+        "L": 0.79,
+        "F": 0.8175,
+        "T": 0.5,
+        "R": 0.010999999999999944
+      },
+      "contributions": {
+        "U": 0.15000000000000002,
+        "S": 0.3,
+        "L": 0.1185,
+        "F": 0.1635,
+        "T": -0.05,
+        "R": -0.0005499999999999972
+      },
+      "total": 0.68145,
+      "future": {
+        "mean": 0.8175,
+        "cvar": 0.7900000000000001,
+        "block_rate": 0.0,
+        "risk": 0.010999999999999944,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": true,
+      "executable": false
+    },
+    {
+      "candidate": {
+        "candidate_id": "C_fast",
+        "metrics": {
+          "compactness": 0.73,
+          "support_ratio": 0.96,
+          "support_cog_margin_mm": 50,
+          "min_load_slack_ratio": 0.68,
+          "pallet_cog_offset_mm": 130,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 4.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "UNKNOWN",
+          "cycle_time_s": null,
+          "reason": ""
+        }
+      },
+      "features": {
+        "U": 0.73,
+        "S": 0.9039999999999999,
+        "L": 0.678,
+        "F": 0.72,
+        "T": 0.3333333333333333,
+        "R": 0.03599999999999999
+      },
+      "contributions": {
+        "U": 0.146,
+        "S": 0.27119999999999994,
+        "L": 0.1017,
+        "F": 0.144,
+        "T": -0.03333333333333333,
+        "R": -0.0017999999999999995
+      },
+      "total": 0.6277666666666666,
+      "future": {
+        "mean": 0.72,
+        "cvar": 0.63,
+        "block_rate": 0.0,
+        "risk": 0.03599999999999999,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": true,
+      "executable": false
+    },
+    {
+      "candidate": {
+        "candidate_id": "A_compact",
+        "metrics": {
+          "compactness": 0.82,
+          "support_ratio": 0.88,
+          "support_cog_margin_mm": 25,
+          "min_load_slack_ratio": 0.45,
+          "pallet_cog_offset_mm": 180,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 7.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "UNKNOWN",
+          "cycle_time_s": null,
+          "reason": ""
+        }
+      },
+      "features": {
+        "U": 0.82,
+        "S": 0.512,
+        "L": 0.49000000000000005,
+        "F": 0.7,
+        "T": 0.4666666666666667,
+        "R": 0.37
+      },
+      "contributions": {
+        "U": 0.164,
+        "S": 0.1536,
+        "L": 0.07350000000000001,
+        "F": 0.13999999999999999,
+        "T": -0.04666666666666667,
+        "R": -0.0185
+      },
+      "total": 0.4659333333333333,
+      "future": {
+        "mean": 0.7,
+        "cvar": 0.15,
+        "block_rate": 0.25,
+        "risk": 0.37,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": true,
+      "executable": false
+    }
+  ],
+  "selected_before_robot": null,
+  "ranked_after_mock_robot": [
+    {
+      "candidate": {
+        "candidate_id": "B_supported",
+        "metrics": {
+          "compactness": 0.75,
+          "support_ratio": 1.0,
+          "support_cog_margin_mm": 60,
+          "min_load_slack_ratio": 0.8,
+          "pallet_cog_offset_mm": 90,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 8.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "FAIL",
+          "cycle_time_s": null,
+          "reason": "mock_path_collision"
+        }
+      },
+      "features": {
+        "U": 0.75,
+        "S": 1.0,
+        "L": 0.79,
+        "F": 0.8175,
+        "T": 0.5,
+        "R": 0.010999999999999944
+      },
+      "contributions": {
+        "U": 0.15000000000000002,
+        "S": 0.3,
+        "L": 0.1185,
+        "F": 0.1635,
+        "T": -0.05,
+        "R": -0.0005499999999999972
+      },
+      "total": 0.68145,
+      "future": {
+        "mean": 0.8175,
+        "cvar": 0.7900000000000001,
+        "block_rate": 0.0,
+        "risk": 0.010999999999999944,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": false,
+      "executable": false
+    },
+    {
+      "candidate": {
+        "candidate_id": "C_fast",
+        "metrics": {
+          "compactness": 0.73,
+          "support_ratio": 0.96,
+          "support_cog_margin_mm": 50,
+          "min_load_slack_ratio": 0.68,
+          "pallet_cog_offset_mm": 130,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 4.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "PASS",
+          "cycle_time_s": 4.4,
+          "reason": ""
+        }
+      },
+      "features": {
+        "U": 0.73,
+        "S": 0.9039999999999999,
+        "L": 0.678,
+        "F": 0.72,
+        "T": 0.3548387096774194,
+        "R": 0.03599999999999999
+      },
+      "contributions": {
+        "U": 0.146,
+        "S": 0.27119999999999994,
+        "L": 0.1017,
+        "F": 0.144,
+        "T": -0.035483870967741936,
+        "R": -0.0017999999999999995
+      },
+      "total": 0.6256161290322579,
+      "future": {
+        "mean": 0.72,
+        "cvar": 0.63,
+        "block_rate": 0.0,
+        "risk": 0.03599999999999999,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": true,
+      "executable": true
+    },
+    {
+      "candidate": {
+        "candidate_id": "A_compact",
+        "metrics": {
+          "compactness": 0.82,
+          "support_ratio": 0.88,
+          "support_cog_margin_mm": 25,
+          "min_load_slack_ratio": 0.45,
+          "pallet_cog_offset_mm": 180,
+          "pallet_cog_limit_mm": 400,
+          "cycle_time_s": 7.0
+        },
+        "physics_passed": true,
+        "physics_reason": "",
+        "robot": {
+          "status": "PASS",
+          "cycle_time_s": 7.2,
+          "reason": ""
+        }
+      },
+      "features": {
+        "U": 0.82,
+        "S": 0.512,
+        "L": 0.49000000000000005,
+        "F": 0.7,
+        "T": 0.4736842105263158,
+        "R": 0.37
+      },
+      "contributions": {
+        "U": 0.164,
+        "S": 0.1536,
+        "L": 0.07350000000000001,
+        "F": 0.13999999999999999,
+        "T": -0.04736842105263159,
+        "R": -0.0185
+      },
+      "total": 0.4652315789473684,
+      "future": {
+        "mean": 0.7,
+        "cvar": 0.15,
+        "block_rate": 0.25,
+        "risk": 0.37,
+        "scenario_count": 4
+      },
+      "rejection_reason": "",
+      "eligible": true,
+      "executable": true
+    }
+  ],
+  "selected_after_mock_robot": "C_fast",
+  "unsafe_filtered": true
+}
