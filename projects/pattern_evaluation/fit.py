@@ -1,5 +1,6 @@
 """Retrain from external full-candidate labels, or tune from shared-schema episodes."""
 import argparse
+import random
 from pathlib import Path
 
 from pacdata.io import read_jsonl, write_json
@@ -11,6 +12,35 @@ from .planner import load_config
 def require_disjoint(a, b):
     shared = {g["base_group"] for g in a}.intersection(g["base_group"] for g in b)
     if shared: raise ValueError("Inventory groups overlap between splits: " + ", ".join(sorted(shared)))
+
+
+def select_weight_episodes(episodes, limit, seed):
+    """Balance inventory groups and scenarios; camera variants share one case."""
+    if limit < 1: raise ValueError("limit must be positive")
+    cases = {}
+    for episode in episodes:
+        if episode.get("split") == "test":
+            raise ValueError("Weight fitting must not consume test episodes")
+        key = (episode["base_group"], episode["scenario"])
+        previous = cases.get(key)
+        if previous is None or episode.get("camera", {}).get("name") == "topview4":
+            cases[key] = episode
+    by_group = {}
+    for (group, scenario), episode in sorted(cases.items()):
+        by_group.setdefault(group, []).append(episode)
+    rng = random.Random(seed)
+    groups = sorted(by_group); rng.shuffle(groups)
+    for values in by_group.values(): rng.shuffle(values)
+    selected = []
+    while len(selected) < limit:
+        added = False
+        for group in groups:
+            if by_group[group]:
+                selected.append(by_group[group].pop(0)); added = True
+                if len(selected) == limit: break
+        if not added: break
+    if not selected: raise ValueError("Empty tuning dataset")
+    return selected
 
 
 def main():
@@ -34,14 +64,8 @@ def main():
         model.save(output/"ranker.json"); write_json(output/"training.json", report)
     else:
         if (output/"learned_config.json").exists(): raise FileExistsError("Use a fresh --out directory")
-        model = Ranker.load(args.model); episodes = []
-        used = set()
-        for episode in read_jsonl(args.episodes):
-            if episode.get("split") == "test": raise ValueError("Weight fitting must not consume test episodes")
-            key = (episode["base_group"], episode["scenario"])
-            if key not in used: episodes.append(episode); used.add(key)
-            if len(episodes) >= args.limit: break
-        if not episodes: raise ValueError("Empty tuning dataset")
+        model = Ranker.load(args.model)
+        episodes = select_weight_episodes(read_jsonl(args.episodes), args.limit, config["seed"])
         blocked = set(model.value["training"].get("train_base_groups", []))
         if blocked.intersection(ep["base_group"] for ep in episodes):
             raise ValueError("Weight validation reuses model-training inventory groups")

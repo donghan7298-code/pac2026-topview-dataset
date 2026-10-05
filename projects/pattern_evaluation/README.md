@@ -13,6 +13,8 @@ python -m projects.pattern_evaluation plan --input projects/pattern_evaluation/a
 
 `artifacts/ranker.json`은 실행한 학습의 체크포인트이고, `artifacts/learned_config.json`은 검증 에피소드에서 선택한 가중치입니다. 기본 실행은 두 파일을 함께 읽습니다. 학습 데이터·분할·비교 결과는 [검증 보고서](VALIDATION.md)와 `artifacts/*.json`에 기록됩니다.
 
+재학습용 `train.labels.jsonl.gz`, `validation.labels.jsonl.gz`와 864회 실행 결과 `benchmark_episodes.jsonl.gz`를 함께 제공합니다. 파일 크기와 SHA-256은 `artifacts/release_files.json`에서 확인할 수 있습니다.
+
 ## 연결
 
 ```python
@@ -51,9 +53,17 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m projects.pattern_evaluation.t
 
 # 빠른 연결 검사: 작은 별도 데이터로 동일한 학습 경로 실행
 OPENBLAS_NUM_THREADS=1 python -m projects.pattern_evaluation.train --quick --out projects/pattern_evaluation/runs/quick_run
+
+# 저장된 교사 표적으로 신경망만 재학습
+OPENBLAS_NUM_THREADS=1 python -m projects.pattern_evaluation.fit ranker --train projects/pattern_evaluation/artifacts/train.labels.jsonl.gz --validation projects/pattern_evaluation/artifacts/validation.labels.jsonl.gz --out projects/pattern_evaluation/runs/retrained
+
+# 기존 체크포인트를 유지하고 검증 중단 지점부터 계속 실행
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m projects.pattern_evaluation.release --workers 4
 ```
 
 새 결과를 적용하려면 `--model runs/.../ranker.json --config runs/.../learned_config.json`을 사용합니다. 기존 배포 결과를 덮어쓰지 않도록 새 출력 디렉터리를 지정합니다.
+
+`release`는 저장된 학습 모델과 가중치를 그대로 사용합니다. 완료 결과가 있으면 재사용하고, 새 계산은 에피소드마다 기록합니다. 평가 기준·모델·가중치가 달라지면 새 `--out` 경로가 필요합니다. `--labels`를 추가하면 누락된 합성 교사 표적을 재생성합니다. `fit weights`는 재고 그룹과 시나리오에 고르게 표본을 배분하며 시험 데이터가 입력되면 거절합니다.
 
 외부 후보의 교사 표적을 만들고 다시 학습할 수 있습니다. 같은 재고와 그 카메라 변형은 하나의 `base_group`으로 묶어야 합니다.
 

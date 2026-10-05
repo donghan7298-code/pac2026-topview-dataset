@@ -87,7 +87,8 @@ class Planner:
         if mode in ("ahead", "teacher"):
             futures = sample_futures(obs, self.config)
             for row in selected:
-                key = json.dumps([obs["pallet"], obs["placed_boxes"], obs["current_box"],
+                key = json.dumps([self.config["future_candidate_limit"], self.config["cvar_fraction"],
+                    self.config["safety"]["min_cog_edge"], obs["pallet"], obs["placed_boxes"], obs["current_box"],
                     row["candidate"], futures], sort_keys=True, separators=(",", ":"))
                 future = self.future_cache.get(key)
                 if future is None:
